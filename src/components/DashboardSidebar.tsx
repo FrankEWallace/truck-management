@@ -2,21 +2,24 @@ import {
   LayoutDashboard, Truck, Package, MapPin, BarChart3, 
   Settings, Users, FileText, Bell, ChevronDown, LogOut
 } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navItems = [
-  { icon: LayoutDashboard, label: "Dashboard", active: false },
-  { icon: Truck, label: "Trucks", active: true },
-  { icon: Package, label: "Freight", active: false },
-  { icon: MapPin, label: "Tracking", active: false },
-  { icon: Users, label: "Drivers", active: false },
-  { icon: BarChart3, label: "Analytics", active: false },
-  { icon: FileText, label: "Reports", active: false },
-  { icon: Bell, label: "Alerts", active: false },
+  { icon: LayoutDashboard, label: "Dashboard", path: "/dashboard" },
+  { icon: Truck, label: "Trucks", path: "/" },
+  { icon: Package, label: "Freight", path: "/freight" },
+  { icon: MapPin, label: "Tracking", path: "/tracking" },
+  { icon: Users, label: "Drivers", path: "/drivers" },
+  { icon: BarChart3, label: "Analytics", path: "/analytics" },
+  { icon: FileText, label: "Reports", path: "/reports" },
+  { icon: Bell, label: "Alerts", path: "/alerts" },
 ];
 
 const DashboardSidebar = () => {
+  const location = useLocation();
+
   return (
-    <aside className="w-[220px] min-h-screen bg-sidebar flex flex-col">
+    <aside className="w-[220px] min-h-screen bg-sidebar flex flex-col shrink-0">
       {/* Logo */}
       <div className="px-5 py-5 flex items-center gap-2.5">
         <div className="w-8 h-8 rounded-lg bg-sidebar-primary flex items-center justify-center">
@@ -29,19 +32,23 @@ const DashboardSidebar = () => {
 
       {/* Nav */}
       <nav className="flex-1 px-3 mt-2 space-y-0.5">
-        {navItems.map(({ icon: Icon, label, active }) => (
-          <button
-            key={label}
-            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-              active
-                ? "bg-sidebar-primary text-sidebar-primary-foreground"
-                : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
-            }`}
-          >
-            <Icon className="w-[18px] h-[18px]" />
-            {label}
-          </button>
-        ))}
+        {navItems.map(({ icon: Icon, label, path }) => {
+          const active = location.pathname === path;
+          return (
+            <Link
+              key={label}
+              to={path}
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                active
+                  ? "bg-sidebar-primary text-sidebar-primary-foreground"
+                  : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
+              }`}
+            >
+              <Icon className="w-[18px] h-[18px]" />
+              {label}
+            </Link>
+          );
+        })}
       </nav>
 
       {/* Bottom */}
