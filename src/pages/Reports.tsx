@@ -50,7 +50,7 @@ const Reports = () => {
           { label: "Scheduled", value: scheduledReports.filter(s => s.active).length },
           { label: "Generating", value: reports.filter(r => r.status === "Generating").length },
         ].map(s => (
-          <div key={s.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
+          <div key={s.label} className="glass rounded-xl p-3 sm:p-4">
             <p className="text-[11px] text-muted-foreground">{s.label}</p>
             <p className="text-base sm:text-lg font-bold text-foreground mt-1">{s.value}</p>
           </div>
