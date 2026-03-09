@@ -61,7 +61,7 @@ const Alerts = () => {
           { label: "Info", count: alertState.filter(a => a.severity === "info").length, ...severityConfig.info },
           { label: "Success", count: alertState.filter(a => a.severity === "success").length, ...severityConfig.success },
         ].map(s => (
-          <div key={s.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
+          <div key={s.label} className="glass rounded-xl p-3 sm:p-4">
             <div className="flex items-center gap-2 mb-2">
               <div className={`w-7 h-7 rounded-lg ${s.bg} flex items-center justify-center`}>
                 <s.icon className={`w-3.5 h-3.5 ${s.color}`} />
