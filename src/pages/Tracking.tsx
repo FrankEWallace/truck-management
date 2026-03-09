@@ -31,7 +31,7 @@ const Tracking = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-5 xl:h-[calc(100vh-200px)]">
         {/* Vehicle List */}
-        <div className="bg-card border border-border rounded-xl overflow-hidden flex flex-col max-h-[300px] md:max-h-none">
+        <div className="glass rounded-xl overflow-hidden flex flex-col max-h-[300px] md:max-h-none">
           <div className="p-3 border-b border-border">
             <input className="w-full px-3 py-1.5 text-xs bg-muted/50 border border-border rounded-lg text-foreground placeholder:text-muted-foreground" placeholder="Search vehicles..." />
           </div>
