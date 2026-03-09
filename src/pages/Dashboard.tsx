@@ -127,7 +127,7 @@ const Dashboard = () => {
         </div>
 
         {/* Recent Activity */}
-        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+        <div className="glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Recent Activity</h3>
           <div className="space-y-3">
             {recentActivity.map((a) => (
