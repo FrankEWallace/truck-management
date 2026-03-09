@@ -125,7 +125,7 @@ const Alerts = () => {
           );
         })}
         {filtered.length === 0 && (
-          <div className="bg-card border border-border rounded-xl p-8 text-center">
+          <div className="glass rounded-xl p-8 text-center">
             <Bell className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
             <p className="text-sm text-muted-foreground">No alerts in this category</p>
           </div>
