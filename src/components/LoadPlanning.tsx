@@ -7,7 +7,7 @@ const loadItems = [
 
 const LoadPlanning = () => {
   return (
-    <div className="bg-card rounded-xl border border-border p-5">
+    <div className="glass rounded-xl p-5">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-bold text-foreground">Load Planning</h3>
         <span className="text-xs text-muted-foreground">Capacity: 90%</span>

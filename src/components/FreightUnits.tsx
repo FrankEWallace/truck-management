@@ -8,7 +8,7 @@ const units = [
 
 const FreightUnits = () => {
   return (
-    <div className="bg-card rounded-xl border border-border p-5">
+    <div className="glass rounded-xl p-5">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-bold text-foreground">Freight Units</h3>
         <button className="text-xs text-primary font-medium hover:underline">Manage</button>

@@ -9,7 +9,7 @@ const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 const GanttChart = () => {
   return (
-    <div className="bg-card rounded-xl border border-border p-5">
+    <div className="glass rounded-xl p-5">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm font-bold text-foreground">Gantt Chart</h3>
         <div className="flex gap-1">
