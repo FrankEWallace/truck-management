@@ -70,7 +70,7 @@ const Dashboard = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Revenue Chart */}
-        <div className="lg:col-span-2 bg-card border border-border rounded-xl p-4 sm:p-5">
+         <div className="lg:col-span-2 glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Revenue vs Expenses</h3>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={revenueData}>
