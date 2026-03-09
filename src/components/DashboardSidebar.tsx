@@ -1,6 +1,6 @@
 import { 
   LayoutDashboard, Truck, Package, MapPin, BarChart3, 
-  Settings, Users, FileText, Bell, ChevronDown, LogOut
+  Settings, Users, FileText, Bell, ChevronDown, X
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -15,19 +15,30 @@ const navItems = [
   { icon: Bell, label: "Alerts", path: "/alerts" },
 ];
 
-const DashboardSidebar = () => {
+interface DashboardSidebarProps {
+  onClose?: () => void;
+}
+
+const DashboardSidebar = ({ onClose }: DashboardSidebarProps) => {
   const location = useLocation();
 
   return (
     <aside className="w-[220px] min-h-screen bg-sidebar flex flex-col shrink-0">
       {/* Logo */}
-      <div className="px-5 py-5 flex items-center gap-2.5">
-        <div className="w-8 h-8 rounded-lg bg-sidebar-primary flex items-center justify-center">
-          <Truck className="w-4 h-4 text-sidebar-primary-foreground" />
+      <div className="px-5 py-5 flex items-center justify-between">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-lg bg-sidebar-primary flex items-center justify-center">
+            <Truck className="w-4 h-4 text-sidebar-primary-foreground" />
+          </div>
+          <span className="text-sidebar-accent-foreground font-bold text-base tracking-tight">
+            Truck&Co
+          </span>
         </div>
-        <span className="text-sidebar-accent-foreground font-bold text-base tracking-tight">
-          Truck&Co
-        </span>
+        {onClose && (
+          <button onClick={onClose} className="lg:hidden p-1 rounded-lg hover:bg-sidebar-accent text-sidebar-foreground">
+            <X className="w-5 h-5" />
+          </button>
+        )}
       </div>
 
       {/* Nav */}
@@ -38,6 +49,7 @@ const DashboardSidebar = () => {
             <Link
               key={label}
               to={path}
+              onClick={onClose}
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                 active
                   ? "bg-sidebar-primary text-sidebar-primary-foreground"
