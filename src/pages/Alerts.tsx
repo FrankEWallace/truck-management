@@ -48,7 +48,7 @@ const Alerts = () => {
           <h1 className="text-lg sm:text-xl font-bold text-foreground">Alerts</h1>
           <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">{unreadCount} unread notifications</p>
         </div>
-        <button onClick={markAllRead} className="flex items-center gap-2 bg-card border border-border text-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-muted transition-colors self-start sm:self-auto">
+        <button onClick={markAllRead} className="flex items-center gap-2 glass text-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-white/20 transition-colors self-start sm:self-auto">
           <Check className="w-4 h-4" /> Mark All Read
         </button>
       </div>
@@ -61,7 +61,7 @@ const Alerts = () => {
           { label: "Info", count: alertState.filter(a => a.severity === "info").length, ...severityConfig.info },
           { label: "Success", count: alertState.filter(a => a.severity === "success").length, ...severityConfig.success },
         ].map(s => (
-          <div key={s.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
+          <div key={s.label} className="glass rounded-xl p-3 sm:p-4">
             <div className="flex items-center gap-2 mb-2">
               <div className={`w-7 h-7 rounded-lg ${s.bg} flex items-center justify-center`}>
                 <s.icon className={`w-3.5 h-3.5 ${s.color}`} />
@@ -76,11 +76,11 @@ const Alerts = () => {
       {/* Filters */}
       <div className="flex gap-1.5 flex-wrap">
         {filters.map(f => (
-          <button key={f} onClick={() => setFilter(f)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-              filter === f ? "bg-primary text-primary-foreground" : "bg-card border border-border text-muted-foreground hover:text-foreground"
-            }`}
-          >{f}</button>
+           <button key={f} onClick={() => setFilter(f)}
+             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+               filter === f ? "glass" : "bg-muted border border-muted text-muted-foreground hover:text-foreground"
+             }`}
+           >{f}</button>
         ))}
       </div>
 
@@ -125,7 +125,7 @@ const Alerts = () => {
           );
         })}
         {filtered.length === 0 && (
-          <div className="bg-card border border-border rounded-xl p-8 text-center">
+          <div className="glass rounded-xl p-8 text-center">
             <Bell className="w-8 h-8 text-muted-foreground mx-auto mb-2" />
             <p className="text-sm text-muted-foreground">No alerts in this category</p>
           </div>

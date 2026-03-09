@@ -44,7 +44,7 @@ const Drivers = () => {
           { label: "Avg Rating", value: (drivers.reduce((a, d) => a + d.rating, 0) / drivers.length).toFixed(1) },
           { label: "Total Trips", value: drivers.reduce((a, d) => a + d.trips, 0).toLocaleString() },
         ].map(s => (
-          <div key={s.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
+          <div key={s.label} className="glass rounded-xl p-3 sm:p-4">
             <p className="text-[11px] text-muted-foreground">{s.label}</p>
             <p className="text-base sm:text-lg font-bold text-foreground mt-1">{s.value}</p>
           </div>
@@ -57,7 +57,7 @@ const Drivers = () => {
           {filters.map(f => (
             <button key={f} onClick={() => setFilter(f)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                filter === f ? "bg-primary text-primary-foreground" : "bg-card border border-border text-muted-foreground hover:text-foreground"
+                filter === f ? "glass" : "bg-muted border border-muted text-muted-foreground hover:text-foreground"
               }`}
             >{f}</button>
           ))}
@@ -65,14 +65,14 @@ const Drivers = () => {
         <div className="flex items-center gap-2">
           <div className="relative flex-1 sm:flex-none">
             <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-            <input className="pl-9 pr-3 py-1.5 text-xs bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground w-full sm:w-52" placeholder="Search drivers..." />
+            <input className="pl-9 pr-3 py-1.5 text-xs glass rounded-lg text-foreground placeholder:text-muted-foreground w-full sm:w-52" placeholder="Search drivers..." />
           </div>
-          <div className="flex bg-card border border-border rounded-lg overflow-hidden">
-            {(["grid", "list"] as const).map(v => (
-              <button key={v} onClick={() => setView(v)}
-                className={`px-3 py-1.5 text-xs font-medium transition-colors ${view === v ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
-              >{v === "grid" ? "Grid" : "List"}</button>
-            ))}
+          <div className="flex bg-glass border border-white/20 rounded-lg overflow-hidden">
+             {(["grid", "list"] as const).map(v => (
+               <button key={v} onClick={() => setView(v)}
+                 className={`px-3 py-1.5 text-xs font-medium transition-colors ${view === v ? "glass" : "text-muted-foreground"}`}
+               >{v === "grid" ? "Grid" : "List"}</button>
+             ))}
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@ const Drivers = () => {
       {view === "grid" ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
           {filtered.map((d) => (
-            <div key={d.id} className="bg-card border border-border rounded-xl p-4 hover:border-primary/30 transition-colors">
+            <div key={d.id} className="glass rounded-xl p-4 hover:border-primary/30 transition-colors">
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center text-xs font-bold text-primary">{d.avatar}</div>
@@ -118,7 +118,7 @@ const Drivers = () => {
           ))}
         </div>
       ) : (
-        <div className="bg-card border border-border rounded-xl overflow-hidden overflow-x-auto">
+        <div className="glass rounded-xl overflow-hidden overflow-x-auto">
           <table className="w-full min-w-[700px]">
             <thead>
               <tr className="border-b border-border">

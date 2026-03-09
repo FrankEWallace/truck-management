@@ -50,7 +50,7 @@ const Reports = () => {
           { label: "Scheduled", value: scheduledReports.filter(s => s.active).length },
           { label: "Generating", value: reports.filter(r => r.status === "Generating").length },
         ].map(s => (
-          <div key={s.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
+          <div key={s.label} className="glass rounded-xl p-3 sm:p-4">
             <p className="text-[11px] text-muted-foreground">{s.label}</p>
             <p className="text-base sm:text-lg font-bold text-foreground mt-1">{s.value}</p>
           </div>
@@ -62,15 +62,15 @@ const Reports = () => {
         <div className="lg:col-span-2 space-y-3">
           <div className="flex gap-1.5 flex-wrap">
             {filters.map(f => (
-              <button key={f} onClick={() => setFilter(f)}
+             <button key={f} onClick={() => setFilter(f)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  filter === f ? "bg-primary text-primary-foreground" : "bg-card border border-border text-muted-foreground hover:text-foreground"
+                  filter === f ? "glass" : "bg-muted border border-muted text-muted-foreground hover:text-foreground"
                 }`}
-              >{f}</button>
+               >{f}</button>
             ))}
           </div>
 
-          <div className="bg-card border border-border rounded-xl overflow-hidden">
+          <div className="glass rounded-xl overflow-hidden">
             {filtered.map((r, i) => (
               <div key={r.id} className={`flex items-center justify-between px-3 sm:px-4 py-3 hover:bg-muted/30 transition-colors ${i < filtered.length - 1 ? "border-b border-border" : ""}`}>
                 <div className="flex items-center gap-3 min-w-0">
@@ -106,7 +106,7 @@ const Reports = () => {
         </div>
 
         {/* Scheduled Reports */}
-        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+        <div className="glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Scheduled Reports</h3>
           <div className="space-y-3">
             {scheduledReports.map((s) => (

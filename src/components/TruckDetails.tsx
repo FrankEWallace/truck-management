@@ -9,7 +9,7 @@ const stats = [
 
 const TruckDetails = () => {
   return (
-    <div className="bg-card rounded-xl border border-border p-5">
+    <div className="glass rounded-xl p-5">
       <div className="flex items-start justify-between mb-4">
         <div>
           <h2 className="text-lg font-bold text-foreground">Trucks Management</h2>

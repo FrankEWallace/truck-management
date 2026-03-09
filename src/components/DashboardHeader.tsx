@@ -6,7 +6,7 @@ interface DashboardHeaderProps {
 
 const DashboardHeader = ({ onMenuToggle }: DashboardHeaderProps) => {
   return (
-    <header className="h-14 bg-card border-b border-border flex items-center justify-between px-3 sm:px-6">
+    <header className="h-14 glass flex items-center justify-between px-3 sm:px-6">
       <div className="flex items-center gap-2 text-sm">
         <button onClick={onMenuToggle} className="lg:hidden p-1.5 rounded-lg hover:bg-secondary text-muted-foreground mr-1">
           <Menu className="w-5 h-5" />

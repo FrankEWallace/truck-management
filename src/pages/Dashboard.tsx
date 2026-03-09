@@ -54,7 +54,7 @@ const Dashboard = () => {
       {/* KPI Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
         {stats.map((stat) => (
-          <div key={stat.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
+          <div key={stat.label} className="glass rounded-xl p-3 sm:p-4">
             <div className="flex items-center justify-between mb-2">
               <stat.icon className="w-4 h-4 text-muted-foreground" />
               <span className={`text-xs font-medium flex items-center gap-0.5 ${stat.up ? "text-emerald-500" : "text-red-400"}`}>
@@ -70,7 +70,7 @@ const Dashboard = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Revenue Chart */}
-        <div className="lg:col-span-2 bg-card border border-border rounded-xl p-4 sm:p-5">
+         <div className="lg:col-span-2 glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Revenue vs Expenses</h3>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={revenueData}>
@@ -85,7 +85,7 @@ const Dashboard = () => {
         </div>
 
         {/* Fleet Status */}
-        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+         <div className="glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Fleet Status</h3>
           <ResponsiveContainer width="100%" height={180}>
             <PieChart>
@@ -113,7 +113,7 @@ const Dashboard = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Deliveries */}
-        <div className="lg:col-span-2 bg-card border border-border rounded-xl p-4 sm:p-5">
+        <div className="lg:col-span-2 glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Weekly Deliveries</h3>
           <ResponsiveContainer width="100%" height={200}>
             <AreaChart data={deliveryData}>
@@ -127,7 +127,7 @@ const Dashboard = () => {
         </div>
 
         {/* Recent Activity */}
-        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+        <div className="glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Recent Activity</h3>
           <div className="space-y-3">
             {recentActivity.map((a) => (

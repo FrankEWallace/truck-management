@@ -44,7 +44,7 @@ const Freight = () => {
           { label: "Delivered", value: shipments.filter(s => s.status === "Delivered").length, sub: "Completed" },
           { label: "Total Weight", value: "84,700 lbs", sub: "All shipments" },
         ].map((s) => (
-          <div key={s.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
+          <div key={s.label} className="glass rounded-xl p-3 sm:p-4">
             <p className="text-[11px] text-muted-foreground">{s.label}</p>
             <p className="text-base sm:text-lg font-bold text-foreground mt-1">{s.value}</p>
             <p className="text-[11px] text-muted-foreground">{s.sub}</p>
@@ -60,7 +60,7 @@ const Freight = () => {
               key={f}
               onClick={() => setFilter(f)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                filter === f ? "bg-primary text-primary-foreground" : "bg-card border border-border text-muted-foreground hover:text-foreground"
+                filter === f ? "glass" : "bg-muted border border-muted text-muted-foreground hover:text-foreground"
               }`}
             >
               {f}
@@ -69,12 +69,12 @@ const Freight = () => {
         </div>
         <div className="relative">
           <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-          <input className="pl-9 pr-3 py-1.5 text-xs bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground w-full sm:w-52" placeholder="Search orders..." />
+          <input className="pl-9 pr-3 py-1.5 text-xs glass rounded-lg text-foreground placeholder:text-muted-foreground w-full sm:w-52" placeholder="Search orders..." />
         </div>
       </div>
 
       {/* Table */}
-      <div className="bg-card border border-border rounded-xl overflow-hidden overflow-x-auto">
+      <div className="glass rounded-xl overflow-hidden overflow-x-auto">
         <table className="w-full min-w-[700px]">
           <thead>
             <tr className="border-b border-border">

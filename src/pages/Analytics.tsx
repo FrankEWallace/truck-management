@@ -52,7 +52,7 @@ const Analytics = () => {
       {/* KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {kpis.map(k => (
-          <div key={k.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
+          <div key={k.label} className="glass rounded-xl p-3 sm:p-4">
             <div className="flex items-center justify-between mb-2">
               <k.icon className="w-4 h-4 text-muted-foreground" />
               <span className={`text-xs font-medium flex items-center gap-0.5 ${k.up ? "text-emerald-500" : "text-red-400"}`}>
@@ -68,7 +68,7 @@ const Analytics = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Revenue Trend */}
-        <div className="lg:col-span-2 bg-card border border-border rounded-xl p-4 sm:p-5">
+        <div className="lg:col-span-2 glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Revenue Trend (9 Months)</h3>
           <ResponsiveContainer width="100%" height={220}>
             <AreaChart data={revenueByMonth}>
@@ -82,7 +82,7 @@ const Analytics = () => {
         </div>
 
         {/* Revenue by Route */}
-        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+         <div className="glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Revenue by Region</h3>
           <ResponsiveContainer width="100%" height={180}>
             <PieChart>
@@ -105,7 +105,7 @@ const Analytics = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Fuel Consumption */}
-        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+         <div className="glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Fuel Consumption (Gallons)</h3>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={fuelConsumption}>
@@ -120,7 +120,7 @@ const Analytics = () => {
         </div>
 
         {/* Efficiency */}
-        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+        <div className="glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Efficiency Metrics (%)</h3>
           <ResponsiveContainer width="100%" height={220}>
             <LineChart data={efficiencyData}>
@@ -136,7 +136,7 @@ const Analytics = () => {
       </div>
 
       {/* Top Routes */}
-      <div className="bg-card border border-border rounded-xl p-4 sm:p-5 overflow-x-auto">
+      <div className="glass rounded-xl p-4 sm:p-5 overflow-x-auto">
         <h3 className="text-sm font-semibold text-foreground mb-4">Top Performing Routes</h3>
         <table className="w-full min-w-[500px]">
           <thead>

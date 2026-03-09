@@ -31,7 +31,7 @@ const Tracking = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-5 xl:h-[calc(100vh-200px)]">
         {/* Vehicle List */}
-        <div className="bg-card border border-border rounded-xl overflow-hidden flex flex-col max-h-[300px] md:max-h-none">
+        <div className="glass rounded-xl overflow-hidden flex flex-col max-h-[300px] md:max-h-none">
           <div className="p-3 border-b border-border">
             <input className="w-full px-3 py-1.5 text-xs bg-muted/50 border border-border rounded-lg text-foreground placeholder:text-muted-foreground" placeholder="Search vehicles..." />
           </div>
@@ -58,7 +58,7 @@ const Tracking = () => {
         </div>
 
         {/* Map Area */}
-        <div className="md:col-span-1 xl:col-span-2 bg-card border border-border rounded-xl overflow-hidden relative min-h-[300px]">
+        <div className="md:col-span-1 xl:col-span-2 glass rounded-xl overflow-hidden relative min-h-[300px]">
           <div className="absolute inset-0 bg-[#1a1a2e]">
             <svg className="w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
               {Array.from({ length: 20 }).map((_, i) => (
@@ -96,7 +96,7 @@ const Tracking = () => {
         </div>
 
         {/* Details Panel */}
-        <div className="bg-card border border-border rounded-xl overflow-hidden flex flex-col">
+        <div className="glass rounded-xl overflow-hidden flex flex-col">
           <div className="p-4 border-b border-border">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center">
