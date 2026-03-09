@@ -11,7 +11,7 @@ const StatsBar = () => {
   return (
     <div className="grid grid-cols-4 gap-4">
       {stats.map((s) => (
-        <div key={s.label} className="bg-card rounded-xl border border-border p-4">
+        <div key={s.label} className="glass rounded-xl p-4">
           <p className="text-[10px] uppercase tracking-wider text-muted-foreground">{s.label}</p>
           <div className="flex items-end justify-between mt-2">
             <p className="text-lg font-bold text-foreground">{s.value}</p>
