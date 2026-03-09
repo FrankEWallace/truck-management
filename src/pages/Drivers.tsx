@@ -118,7 +118,7 @@ const Drivers = () => {
           ))}
         </div>
       ) : (
-        <div className="bg-card border border-border rounded-xl overflow-hidden overflow-x-auto">
+        <div className="glass rounded-xl overflow-hidden overflow-x-auto">
           <table className="w-full min-w-[700px]">
             <thead>
               <tr className="border-b border-border">
