@@ -1,5 +1,5 @@
 import { TrendingUp, TrendingDown, Truck, Package, DollarSign, Clock, Users, AlertTriangle } from "lucide-react";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, AreaChart, Area } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, AreaChart, Area } from "recharts";
 
 const revenueData = [
   { month: "Jan", revenue: 42000, expenses: 28000 },
@@ -47,14 +47,14 @@ const Dashboard = () => {
   return (
     <div className="space-y-5">
       <div>
-        <h1 className="text-xl font-bold text-foreground">Dashboard Overview</h1>
-        <p className="text-sm text-muted-foreground mt-0.5">Real-time fleet performance and operations summary</p>
+        <h1 className="text-lg sm:text-xl font-bold text-foreground">Dashboard Overview</h1>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">Real-time fleet performance and operations summary</p>
       </div>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
         {stats.map((stat) => (
-          <div key={stat.label} className="bg-card border border-border rounded-xl p-4">
+          <div key={stat.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
             <div className="flex items-center justify-between mb-2">
               <stat.icon className="w-4 h-4 text-muted-foreground" />
               <span className={`text-xs font-medium flex items-center gap-0.5 ${stat.up ? "text-emerald-500" : "text-red-400"}`}>
@@ -62,17 +62,17 @@ const Dashboard = () => {
                 {stat.change}
               </span>
             </div>
-            <p className="text-lg font-bold text-foreground">{stat.value}</p>
+            <p className="text-base sm:text-lg font-bold text-foreground">{stat.value}</p>
             <p className="text-[11px] text-muted-foreground">{stat.label}</p>
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Revenue Chart */}
-        <div className="col-span-2 bg-card border border-border rounded-xl p-5">
+        <div className="lg:col-span-2 bg-card border border-border rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Revenue vs Expenses</h3>
-          <ResponsiveContainer width="100%" height={260}>
+          <ResponsiveContainer width="100%" height={220}>
             <BarChart data={revenueData}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
               <XAxis dataKey="month" tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
@@ -85,7 +85,7 @@ const Dashboard = () => {
         </div>
 
         {/* Fleet Status */}
-        <div className="bg-card border border-border rounded-xl p-5">
+        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Fleet Status</h3>
           <ResponsiveContainer width="100%" height={180}>
             <PieChart>
@@ -111,9 +111,9 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Deliveries */}
-        <div className="col-span-2 bg-card border border-border rounded-xl p-5">
+        <div className="lg:col-span-2 bg-card border border-border rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Weekly Deliveries</h3>
           <ResponsiveContainer width="100%" height={200}>
             <AreaChart data={deliveryData}>
@@ -127,7 +127,7 @@ const Dashboard = () => {
         </div>
 
         {/* Recent Activity */}
-        <div className="bg-card border border-border rounded-xl p-5">
+        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Recent Activity</h3>
           <div className="space-y-3">
             {recentActivity.map((a) => (

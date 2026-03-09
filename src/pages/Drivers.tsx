@@ -26,34 +26,34 @@ const Drivers = () => {
 
   return (
     <div className="space-y-5">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-xl font-bold text-foreground">Drivers</h1>
-          <p className="text-sm text-muted-foreground mt-0.5">Manage your fleet drivers and assignments</p>
+          <h1 className="text-lg sm:text-xl font-bold text-foreground">Drivers</h1>
+          <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">Manage your fleet drivers and assignments</p>
         </div>
-        <button className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">
+        <button className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors self-start sm:self-auto">
           <Plus className="w-4 h-4" /> Add Driver
         </button>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {[
           { label: "Total Drivers", value: drivers.length },
           { label: "On Route", value: drivers.filter(d => d.status === "On Route").length },
           { label: "Avg Rating", value: (drivers.reduce((a, d) => a + d.rating, 0) / drivers.length).toFixed(1) },
           { label: "Total Trips", value: drivers.reduce((a, d) => a + d.trips, 0).toLocaleString() },
         ].map(s => (
-          <div key={s.label} className="bg-card border border-border rounded-xl p-4">
+          <div key={s.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
             <p className="text-[11px] text-muted-foreground">{s.label}</p>
-            <p className="text-lg font-bold text-foreground mt-1">{s.value}</p>
+            <p className="text-base sm:text-lg font-bold text-foreground mt-1">{s.value}</p>
           </div>
         ))}
       </div>
 
       {/* Filters */}
-      <div className="flex items-center justify-between">
-        <div className="flex gap-1.5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="flex gap-1.5 flex-wrap">
           {filters.map(f => (
             <button key={f} onClick={() => setFilter(f)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
@@ -63,9 +63,9 @@ const Drivers = () => {
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <div className="relative">
+          <div className="relative flex-1 sm:flex-none">
             <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-            <input className="pl-9 pr-3 py-1.5 text-xs bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground w-52" placeholder="Search drivers..." />
+            <input className="pl-9 pr-3 py-1.5 text-xs bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground w-full sm:w-52" placeholder="Search drivers..." />
           </div>
           <div className="flex bg-card border border-border rounded-lg overflow-hidden">
             {(["grid", "list"] as const).map(v => (
@@ -79,7 +79,7 @@ const Drivers = () => {
 
       {/* Driver Cards / List */}
       {view === "grid" ? (
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
           {filtered.map((d) => (
             <div key={d.id} className="bg-card border border-border rounded-xl p-4 hover:border-primary/30 transition-colors">
               <div className="flex items-start justify-between mb-3">
@@ -118,8 +118,8 @@ const Drivers = () => {
           ))}
         </div>
       ) : (
-        <div className="bg-card border border-border rounded-xl overflow-hidden">
-          <table className="w-full">
+        <div className="bg-card border border-border rounded-xl overflow-hidden overflow-x-auto">
+          <table className="w-full min-w-[700px]">
             <thead>
               <tr className="border-b border-border">
                 {["Driver", "Status", "Vehicle", "Location", "Rating", "Trips", "License", ""].map(h => (
