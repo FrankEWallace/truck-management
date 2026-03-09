@@ -54,7 +54,7 @@ const Dashboard = () => {
       {/* KPI Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
         {stats.map((stat) => (
-          <div key={stat.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
+          <div key={stat.label} className="glass rounded-xl p-3 sm:p-4">
             <div className="flex items-center justify-between mb-2">
               <stat.icon className="w-4 h-4 text-muted-foreground" />
               <span className={`text-xs font-medium flex items-center gap-0.5 ${stat.up ? "text-emerald-500" : "text-red-400"}`}>
