@@ -48,7 +48,7 @@ const Alerts = () => {
           <h1 className="text-lg sm:text-xl font-bold text-foreground">Alerts</h1>
           <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">{unreadCount} unread notifications</p>
         </div>
-        <button onClick={markAllRead} className="flex items-center gap-2 bg-card border border-border text-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-muted transition-colors self-start sm:self-auto">
+        <button onClick={markAllRead} className="flex items-center gap-2 glass text-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-white/20 transition-colors self-start sm:self-auto">
           <Check className="w-4 h-4" /> Mark All Read
         </button>
       </div>
