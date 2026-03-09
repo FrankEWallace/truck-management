@@ -60,7 +60,7 @@ const Freight = () => {
               key={f}
               onClick={() => setFilter(f)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                filter === f ? "bg-primary text-primary-foreground" : "bg-card border border-border text-muted-foreground hover:text-foreground"
+                filter === f ? "glass" : "bg-muted border border-muted text-muted-foreground hover:text-foreground"
               }`}
             >
               {f}
