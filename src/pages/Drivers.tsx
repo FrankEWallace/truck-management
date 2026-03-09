@@ -65,7 +65,7 @@ const Drivers = () => {
         <div className="flex items-center gap-2">
           <div className="relative flex-1 sm:flex-none">
             <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-            <input className="pl-9 pr-3 py-1.5 text-xs bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground w-full sm:w-52" placeholder="Search drivers..." />
+            <input className="pl-9 pr-3 py-1.5 text-xs glass rounded-lg text-foreground placeholder:text-muted-foreground w-full sm:w-52" placeholder="Search drivers..." />
           </div>
           <div className="flex bg-card border border-border rounded-lg overflow-hidden">
             {(["grid", "list"] as const).map(v => (
