@@ -70,7 +70,7 @@ const Reports = () => {
             ))}
           </div>
 
-          <div className="bg-card border border-border rounded-xl overflow-hidden">
+          <div className="glass rounded-xl overflow-hidden">
             {filtered.map((r, i) => (
               <div key={r.id} className={`flex items-center justify-between px-3 sm:px-4 py-3 hover:bg-muted/30 transition-colors ${i < filtered.length - 1 ? "border-b border-border" : ""}`}>
                 <div className="flex items-center gap-3 min-w-0">
