@@ -25,13 +25,13 @@ const Tracking = () => {
   return (
     <div className="space-y-5">
       <div>
-        <h1 className="text-xl font-bold text-foreground">Live Tracking</h1>
-        <p className="text-sm text-muted-foreground mt-0.5">Real-time GPS tracking for all fleet vehicles</p>
+        <h1 className="text-lg sm:text-xl font-bold text-foreground">Live Tracking</h1>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">Real-time GPS tracking for all fleet vehicles</p>
       </div>
 
-      <div className="grid grid-cols-4 gap-5 h-[calc(100vh-200px)]">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 lg:gap-5 xl:h-[calc(100vh-200px)]">
         {/* Vehicle List */}
-        <div className="bg-card border border-border rounded-xl overflow-hidden flex flex-col">
+        <div className="bg-card border border-border rounded-xl overflow-hidden flex flex-col max-h-[300px] md:max-h-none">
           <div className="p-3 border-b border-border">
             <input className="w-full px-3 py-1.5 text-xs bg-muted/50 border border-border rounded-lg text-foreground placeholder:text-muted-foreground" placeholder="Search vehicles..." />
           </div>
@@ -58,22 +58,18 @@ const Tracking = () => {
         </div>
 
         {/* Map Area */}
-        <div className="col-span-2 bg-card border border-border rounded-xl overflow-hidden relative">
+        <div className="md:col-span-1 xl:col-span-2 bg-card border border-border rounded-xl overflow-hidden relative min-h-[300px]">
           <div className="absolute inset-0 bg-[#1a1a2e]">
-            {/* Simulated map with grid */}
-            <svg className="w-full h-full" viewBox="0 0 800 600">
-              {/* Grid lines */}
+            <svg className="w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
               {Array.from({ length: 20 }).map((_, i) => (
                 <line key={`h${i}`} x1="0" y1={i * 30} x2="800" y2={i * 30} stroke="hsl(var(--border))" strokeWidth="0.5" opacity="0.3" />
               ))}
               {Array.from({ length: 27 }).map((_, i) => (
                 <line key={`v${i}`} x1={i * 30} y1="0" x2={i * 30} y2="600" stroke="hsl(var(--border))" strokeWidth="0.5" opacity="0.3" />
               ))}
-              {/* Route lines */}
               <path d="M 150 280 Q 300 200 450 320 T 650 250" stroke="hsl(var(--primary))" strokeWidth="2" fill="none" strokeDasharray="8 4" opacity="0.6" />
               <path d="M 200 150 Q 350 100 500 180" stroke="hsl(var(--primary))" strokeWidth="2" fill="none" strokeDasharray="8 4" opacity="0.4" />
               <path d="M 500 350 Q 600 400 700 350" stroke="hsl(var(--primary))" strokeWidth="2" fill="none" strokeDasharray="8 4" opacity="0.4" />
-              {/* Vehicle markers */}
               {vehicles.map((v, i) => {
                 const positions = [
                   { x: 350, y: 280 }, { x: 200, y: 150 }, { x: 520, y: 300 },
@@ -93,7 +89,6 @@ const Tracking = () => {
               })}
             </svg>
           </div>
-          {/* Map overlay info */}
           <div className="absolute top-3 left-3 bg-card/90 backdrop-blur border border-border rounded-lg px-3 py-2">
             <p className="text-[11px] text-muted-foreground">Live Vehicles</p>
             <p className="text-sm font-bold text-foreground">{vehicles.length} tracked</p>
@@ -134,7 +129,6 @@ const Tracking = () => {
               ))}
             </div>
 
-            {/* Fuel bar */}
             <div>
               <div className="flex justify-between text-[11px] mb-1">
                 <span className="text-muted-foreground">Fuel</span>
@@ -149,7 +143,6 @@ const Tracking = () => {
               <Phone className="w-3.5 h-3.5" /> Contact Driver
             </button>
 
-            {/* Event Log */}
             <div>
               <h4 className="text-xs font-semibold text-foreground mb-3">Event Log</h4>
               <div className="space-y-2.5">

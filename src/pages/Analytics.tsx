@@ -45,14 +45,14 @@ const Analytics = () => {
   return (
     <div className="space-y-5">
       <div>
-        <h1 className="text-xl font-bold text-foreground">Analytics</h1>
-        <p className="text-sm text-muted-foreground mt-0.5">Fleet performance insights and trends</p>
+        <h1 className="text-lg sm:text-xl font-bold text-foreground">Analytics</h1>
+        <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">Fleet performance insights and trends</p>
       </div>
 
       {/* KPIs */}
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {kpis.map(k => (
-          <div key={k.label} className="bg-card border border-border rounded-xl p-4">
+          <div key={k.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
             <div className="flex items-center justify-between mb-2">
               <k.icon className="w-4 h-4 text-muted-foreground" />
               <span className={`text-xs font-medium flex items-center gap-0.5 ${k.up ? "text-emerald-500" : "text-red-400"}`}>
@@ -60,17 +60,17 @@ const Analytics = () => {
                 {k.change}
               </span>
             </div>
-            <p className="text-lg font-bold text-foreground">{k.value}</p>
+            <p className="text-base sm:text-lg font-bold text-foreground">{k.value}</p>
             <p className="text-[11px] text-muted-foreground">{k.label}</p>
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
         {/* Revenue Trend */}
-        <div className="col-span-2 bg-card border border-border rounded-xl p-5">
+        <div className="lg:col-span-2 bg-card border border-border rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Revenue Trend (9 Months)</h3>
-          <ResponsiveContainer width="100%" height={260}>
+          <ResponsiveContainer width="100%" height={220}>
             <AreaChart data={revenueByMonth}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
               <XAxis dataKey="month" tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
@@ -82,7 +82,7 @@ const Analytics = () => {
         </div>
 
         {/* Revenue by Route */}
-        <div className="bg-card border border-border rounded-xl p-5">
+        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Revenue by Region</h3>
           <ResponsiveContainer width="100%" height={180}>
             <PieChart>
@@ -103,9 +103,9 @@ const Analytics = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Fuel Consumption */}
-        <div className="bg-card border border-border rounded-xl p-5">
+        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Fuel Consumption (Gallons)</h3>
           <ResponsiveContainer width="100%" height={220}>
             <BarChart data={fuelConsumption}>
@@ -120,7 +120,7 @@ const Analytics = () => {
         </div>
 
         {/* Efficiency */}
-        <div className="bg-card border border-border rounded-xl p-5">
+        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Efficiency Metrics (%)</h3>
           <ResponsiveContainer width="100%" height={220}>
             <LineChart data={efficiencyData}>
@@ -136,9 +136,9 @@ const Analytics = () => {
       </div>
 
       {/* Top Routes */}
-      <div className="bg-card border border-border rounded-xl p-5">
+      <div className="bg-card border border-border rounded-xl p-4 sm:p-5 overflow-x-auto">
         <h3 className="text-sm font-semibold text-foreground mb-4">Top Performing Routes</h3>
-        <table className="w-full">
+        <table className="w-full min-w-[500px]">
           <thead>
             <tr className="border-b border-border">
               {["Route", "Revenue", "Trips", "Efficiency"].map(h => (

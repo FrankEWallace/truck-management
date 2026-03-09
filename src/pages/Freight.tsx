@@ -26,35 +26,35 @@ const Freight = () => {
 
   return (
     <div className="space-y-5">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-xl font-bold text-foreground">Freight Management</h1>
-          <p className="text-sm text-muted-foreground mt-0.5">Manage and track all freight orders</p>
+          <h1 className="text-lg sm:text-xl font-bold text-foreground">Freight Management</h1>
+          <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">Manage and track all freight orders</p>
         </div>
-        <button className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors">
+        <button className="flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors self-start sm:self-auto">
           <Plus className="w-4 h-4" /> New Order
         </button>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {[
           { label: "Total Orders", value: shipments.length, sub: "This week" },
           { label: "In Transit", value: shipments.filter(s => s.status === "In Transit").length, sub: "Active now" },
           { label: "Delivered", value: shipments.filter(s => s.status === "Delivered").length, sub: "Completed" },
           { label: "Total Weight", value: "84,700 lbs", sub: "All shipments" },
         ].map((s) => (
-          <div key={s.label} className="bg-card border border-border rounded-xl p-4">
+          <div key={s.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
             <p className="text-[11px] text-muted-foreground">{s.label}</p>
-            <p className="text-lg font-bold text-foreground mt-1">{s.value}</p>
+            <p className="text-base sm:text-lg font-bold text-foreground mt-1">{s.value}</p>
             <p className="text-[11px] text-muted-foreground">{s.sub}</p>
           </div>
         ))}
       </div>
 
       {/* Filters & Search */}
-      <div className="flex items-center justify-between">
-        <div className="flex gap-1.5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="flex gap-1.5 flex-wrap">
           {filters.map(f => (
             <button
               key={f}
@@ -67,17 +67,15 @@ const Freight = () => {
             </button>
           ))}
         </div>
-        <div className="flex items-center gap-2">
-          <div className="relative">
-            <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-            <input className="pl-9 pr-3 py-1.5 text-xs bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground w-52" placeholder="Search orders..." />
-          </div>
+        <div className="relative">
+          <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+          <input className="pl-9 pr-3 py-1.5 text-xs bg-card border border-border rounded-lg text-foreground placeholder:text-muted-foreground w-full sm:w-52" placeholder="Search orders..." />
         </div>
       </div>
 
       {/* Table */}
-      <div className="bg-card border border-border rounded-xl overflow-hidden">
-        <table className="w-full">
+      <div className="bg-card border border-border rounded-xl overflow-hidden overflow-x-auto">
+        <table className="w-full min-w-[700px]">
           <thead>
             <tr className="border-b border-border">
               {["Order ID", "Route", "Status", "Weight", "Type", "Driver", "ETA", "Progress", ""].map(h => (
