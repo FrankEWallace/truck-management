@@ -44,7 +44,7 @@ const Freight = () => {
           { label: "Delivered", value: shipments.filter(s => s.status === "Delivered").length, sub: "Completed" },
           { label: "Total Weight", value: "84,700 lbs", sub: "All shipments" },
         ].map((s) => (
-          <div key={s.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
+          <div key={s.label} className="glass rounded-xl p-3 sm:p-4">
             <p className="text-[11px] text-muted-foreground">{s.label}</p>
             <p className="text-base sm:text-lg font-bold text-foreground mt-1">{s.value}</p>
             <p className="text-[11px] text-muted-foreground">{s.sub}</p>
