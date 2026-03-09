@@ -81,7 +81,7 @@ const Drivers = () => {
       {view === "grid" ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
           {filtered.map((d) => (
-            <div key={d.id} className="bg-card border border-border rounded-xl p-4 hover:border-primary/30 transition-colors">
+            <div key={d.id} className="glass rounded-xl p-4 hover:border-primary/30 transition-colors">
               <div className="flex items-start justify-between mb-3">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/15 flex items-center justify-center text-xs font-bold text-primary">{d.avatar}</div>
