@@ -120,7 +120,7 @@ const Analytics = () => {
         </div>
 
         {/* Efficiency */}
-        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+        <div className="glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Efficiency Metrics (%)</h3>
           <ResponsiveContainer width="100%" height={220}>
             <LineChart data={efficiencyData}>
