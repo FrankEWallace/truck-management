@@ -136,7 +136,7 @@ const Analytics = () => {
       </div>
 
       {/* Top Routes */}
-      <div className="bg-card border border-border rounded-xl p-4 sm:p-5 overflow-x-auto">
+      <div className="glass rounded-xl p-4 sm:p-5 overflow-x-auto">
         <h3 className="text-sm font-semibold text-foreground mb-4">Top Performing Routes</h3>
         <table className="w-full min-w-[500px]">
           <thead>
