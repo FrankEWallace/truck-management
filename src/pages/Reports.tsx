@@ -106,7 +106,7 @@ const Reports = () => {
         </div>
 
         {/* Scheduled Reports */}
-        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+        <div className="glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Scheduled Reports</h3>
           <div className="space-y-3">
             {scheduledReports.map((s) => (
