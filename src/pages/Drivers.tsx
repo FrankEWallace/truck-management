@@ -67,7 +67,7 @@ const Drivers = () => {
             <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
             <input className="pl-9 pr-3 py-1.5 text-xs glass rounded-lg text-foreground placeholder:text-muted-foreground w-full sm:w-52" placeholder="Search drivers..." />
           </div>
-          <div className="flex bg-card border border-border rounded-lg overflow-hidden">
+          <div className="flex bg-glass border border-white/20 rounded-lg overflow-hidden">
             {(["grid", "list"] as const).map(v => (
               <button key={v} onClick={() => setView(v)}
                 className={`px-3 py-1.5 text-xs font-medium transition-colors ${view === v ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
