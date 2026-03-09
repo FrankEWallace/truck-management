@@ -52,7 +52,7 @@ const Analytics = () => {
       {/* KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {kpis.map(k => (
-          <div key={k.label} className="bg-card border border-border rounded-xl p-3 sm:p-4">
+          <div key={k.label} className="glass rounded-xl p-3 sm:p-4">
             <div className="flex items-center justify-between mb-2">
               <k.icon className="w-4 h-4 text-muted-foreground" />
               <span className={`text-xs font-medium flex items-center gap-0.5 ${k.up ? "text-emerald-500" : "text-red-400"}`}>
