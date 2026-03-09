@@ -58,7 +58,7 @@ const Tracking = () => {
         </div>
 
         {/* Map Area */}
-        <div className="md:col-span-1 xl:col-span-2 bg-card border border-border rounded-xl overflow-hidden relative min-h-[300px]">
+        <div className="md:col-span-1 xl:col-span-2 glass rounded-xl overflow-hidden relative min-h-[300px]">
           <div className="absolute inset-0 bg-[#1a1a2e]">
             <svg className="w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
               {Array.from({ length: 20 }).map((_, i) => (
