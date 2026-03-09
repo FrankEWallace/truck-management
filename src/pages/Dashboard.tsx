@@ -85,7 +85,7 @@ const Dashboard = () => {
         </div>
 
         {/* Fleet Status */}
-        <div className="bg-card border border-border rounded-xl p-4 sm:p-5">
+         <div className="glass rounded-xl p-4 sm:p-5">
           <h3 className="text-sm font-semibold text-foreground mb-4">Fleet Status</h3>
           <ResponsiveContainer width="100%" height={180}>
             <PieChart>
