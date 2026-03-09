@@ -96,7 +96,7 @@ const Tracking = () => {
         </div>
 
         {/* Details Panel */}
-        <div className="bg-card border border-border rounded-xl overflow-hidden flex flex-col">
+        <div className="glass rounded-xl overflow-hidden flex flex-col">
           <div className="p-4 border-b border-border">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center">
