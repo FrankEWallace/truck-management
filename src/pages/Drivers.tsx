@@ -68,11 +68,11 @@ const Drivers = () => {
             <input className="pl-9 pr-3 py-1.5 text-xs glass rounded-lg text-foreground placeholder:text-muted-foreground w-full sm:w-52" placeholder="Search drivers..." />
           </div>
           <div className="flex bg-glass border border-white/20 rounded-lg overflow-hidden">
-            {(["grid", "list"] as const).map(v => (
-              <button key={v} onClick={() => setView(v)}
-                className={`px-3 py-1.5 text-xs font-medium transition-colors ${view === v ? "bg-primary text-primary-foreground" : "text-muted-foreground"}`}
-              >{v === "grid" ? "Grid" : "List"}</button>
-            ))}
+             {(["grid", "list"] as const).map(v => (
+               <button key={v} onClick={() => setView(v)}
+                 className={`px-3 py-1.5 text-xs font-medium transition-colors ${view === v ? "glass" : "text-muted-foreground"}`}
+               >{v === "grid" ? "Grid" : "List"}</button>
+             ))}
           </div>
         </div>
       </div>
